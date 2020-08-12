@@ -142,6 +142,24 @@ type RewardInfo = null | {|
 
 this will throw errors for invalid addresses.
 
+### `/api/getRewardHistory`
+
+#### Input
+
+```js
+{
+  addresses: Array<string> // hex of reward addr.
+}
+```
+
+#### Output
+
+```js
+{
+  [addr: string]: Array<{| epoch: number, amount: number |> //empty array if addr doesn't exist or has no rewards.
+}
+```
+
 ### `/api/txs/utxoSumForAddresses`
 
 #### Input

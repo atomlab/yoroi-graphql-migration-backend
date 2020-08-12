@@ -21,6 +21,7 @@ import { askFilterUsedAddresses } from "./services/filterUsedAddress";
 import { askUtxoSumForAddresses } from "./services/utxoSumForAddress";
 import { handleSignedTx } from "./services/signedTransaction";
 import { handlePoolInfo } from "./services/poolInfo";
+import { handleRewardHistory } from "./services/rewardHistory";
 import { handleGetAccountState } from "./services/accountState";
 
 import { HealthChecker } from "./HealthChecker";
@@ -316,6 +317,10 @@ const routes : Route[] = [ { path: "/v2/bestblock"
 , { path: "/getPoolInfo"
   , method: "post"
   , handler: handlePoolInfo(pool)
+}
+, { path: "/getRewardHistory"
+  , method: "post"
+  , handler: handleRewardHistory(pool)
 }
 , { path: "/v2/importerhealthcheck"
   , method: "get"
