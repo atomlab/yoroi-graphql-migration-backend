@@ -102,7 +102,7 @@ const dataShelleyCerts = {
 
 const dataPaymentCreds = {
   addresses: ["x9566a8f301fb8a046e44557bb38dfb9080a1213f17f200dcd3808169"
-             ,"211c082781577c6b8a4832d29011baab323947e59fbd6ec8995b6c5a"]
+    ,"211c082781577c6b8a4832d29011baab323947e59fbd6ec8995b6c5a"]
   , untilBlock: "d6f6cd7101ce4fa80f7d7fe78745d2ca404705f58247320bc2cef975e7574939"
 };
 
@@ -263,6 +263,7 @@ describe("/txs/history", function() {
   it("should respond to reward addresses with relevant txs and certs", async() => {
     const result = await axios.post(testableUri, dataRewardAddresses);
     expect(result.data).to.not.be.empty;
+    console.log(result.data);
 
     // ensures that withdrawal txs on a reward address appear
     assert.oneOf("f6ee8bc837e3a1bc187da5d28ba67acaf10a9336ff63a243abb879c47b855132", 
